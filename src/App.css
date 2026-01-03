@@ -1,0 +1,483 @@
+/* @import "tailwindcss" */
+
+/* Add your custom styles below */
+body {
+	font-family: 'Arial', sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f4f4f4;
+}
+.navbar {
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	justify-content: space-between;
+	border-bottom: 2px solid green;
+	margin-top: 15px;
+}
+
+.title {
+	margin-top: 0;
+	font-size: 50px;
+}
+.navbar a {
+	text-decoration: none;
+	font-weight: bold;
+	margin: 24px;
+	font-size: 16px;
+	margin-top: 0;
+}
+
+.navbar a:hover {
+	text-decoration: underline;
+	transition: color 0.3s;
+	color: red;
+}
+
+.completed-projects {
+	color: blue;
+	border: none;
+	margin-left: 10px;
+	text-decoration: none;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.completed-projects i {
+	margin-left: 2px;
+	transition: transform 0.3s ease;
+}
+
+.completed-projects:hover i {
+	transform: translateX(5px);
+}
+
+img {
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+	margin-left: 15px;
+}
+
+.btn {
+	background: #ccc;
+	border-radius: 20px;
+	font-size: 20px;
+	margin: 10px;
+}
+
+.btn:hover {
+	background: blue;
+	color: red;
+	transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.container {
+	/* avoid using float for layout; use flex/grid if needed */
+	float: none;
+}
+
+.outter {
+	border: 5px solid black;
+	margin: 50px auto;
+	border-radius: 20px;
+	background: lightseagreen;
+	margin-left: 20px;
+	/* make outter a column flex container so footer anchors at bottom */
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	box-sizing: border-box;
+	overflow: hidden; /* prevent horizontal scroll and ensure border-radius is visible by clipping overflow */
+}
+.showcase {
+	position: relative;
+	padding: 2rem;
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-radius: 20px;
+	margin: 40px 25px;
+	flex: 1; /* take remaining space so footer sits at bottom */
+	min-height: 0; /* allow flex child to shrink properly */
+	overflow: auto; /* contain any floated children and prevent collapse */
+	display: flex;
+	flex-direction: column;
+}
+
+.showcase > footer {
+	margin-top: auto; /* push footer to bottom of .showcase */
+}
+
+.mt-4 {
+	width: 100%;
+	height: auto;
+}
+
+.my-projects {
+	height: auto;
+	padding: 2rem;
+	background-color: #ccc;
+	margin: 2rem auto;
+	max-width: 800px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+.projects-list {
+	list-style: none;
+}
+
+.projects-list li {
+	margin: 10px;
+}
+
+.myForm {
+	border: 2px solid grey;
+	width: 80%;
+	min-height: 250px;
+	margin: 50px auto;
+	background-color: #ccc;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.myForm label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+	color: #333;
+}
+
+.myForm input,
+.myForm textarea {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 16px;
+	box-sizing: border-box;
+}
+
+.myForm input:focus,
+.myForm textarea:focus {
+	outline: none;
+	border-color: #007bff;
+	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.myForm textarea {
+	height: 100px;
+	resize: vertical;
+}
+
+.submitBtn {
+	background-color: #007bff;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.submitBtn:hover {
+	background-color: #0056b3;
+}
+
+.social {
+	background-color: #007bff;
+	color: white;
+	border: none;
+	margin: 0 50px;
+	padding: 10px 20px;
+	border-radius: 15px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	text-decoration: none;
+}
+
+.submitBtn:hover {
+	background-color: #0056b3;
+}
+
+.social:hover {
+	background: blue;
+	color: red;
+	transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.successMessage {
+	color: green;
+	text-align: center;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 10px;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	background: #d4edda;
+}
+
+footer {
+	text-align: center;
+	padding-top: 80px;
+}
+footer p {
+	font-size: 20px;
+	text-align: center;
+	margin-top: 80px;
+	margin-bottom: 0px;
+}
+
+.comment-box {
+	display: flex;
+	align-items: flex-start;
+	background-color: #e0e0e0;
+	padding: 15px;
+	border-radius: 10px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.comment-box1 {
+	display: flex;
+	align-items: flex-start;
+	background-color: black;
+	color: white;
+	padding: 15px;
+	border-radius: 10px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.comment-img {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	margin-right: 15px;
+	flex-shrink: 0;
+}
+
+.comment-text {
+	flex: 1;
+	font-size: 16px;
+	line-height: 1.5;
+	margin: 0;
+}
+
+@media (max-width: 768px) {
+	/* Navbar adjustments */
+	.navbar {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		text-align: center;
+		padding: 15px;
+		gap: 8px;
+	}
+
+	.title {
+		font-size: 35px;
+		margin-top: 0;
+	}
+
+	.navbar a {
+		margin: 10px;
+		font-size: 14px;
+		margin-top: 0;
+	}
+
+	/* Image adjustments */
+	img {
+		width: 80px;
+		height: 80px;
+		margin-top: 10px;
+		float: none;
+	}
+
+	/* Outer container */
+	.outter {
+		margin-left: 10px;
+		margin-right: 10px;
+		border-width: 3px;
+	}
+
+	/* Showcase adjustments */
+	.showcase {
+		margin: 20px 10px;
+		padding: 1rem;
+		height: auto;
+	}
+
+	/* Form adjustments */
+	.myForm {
+		width: 90%;
+		padding: 15px;
+		margin: 20px auto;
+	}
+
+	.myForm label {
+		font-size: 14px;
+	}
+
+	.myForm input,
+	.myForm textarea {
+		font-size: 16px;
+		padding: 8px;
+		margin-bottom: 12px;
+	}
+
+	.myForm textarea {
+		height: 80px;
+	}
+
+	.submitBtn {
+		width: 100%;
+		padding: 12px;
+		font-size: 14px;
+	}
+
+	/* Projects adjustments */
+	.my-projects {
+		height: auto;
+		padding: 1.5rem;
+		margin: 1.5rem auto;
+	}
+
+	.mt-4 {
+		width: 100%;
+		height: auto;
+		padding: 20px;
+	}
+
+	/* Social buttons */
+	.social {
+		margin: 10px 5px;
+		padding: 8px 15px;
+		font-size: 14px;
+		display: block;
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	/* Footer adjustments */
+	footer p {
+		font-size: 16px;
+		margin: 20px 0;
+	}
+
+	/* Comment box adjustments */
+	.comment-box {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		padding: 12px;
+	}
+
+	.comment-img {
+		width: 60px;
+		height: 60px;
+		margin-right: 0;
+		margin-bottom: 10px;
+	}
+
+	.comment-text {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 480px) {
+	/* Extra small devices */
+	body {
+		font-size: 14px;
+	}
+
+	.title {
+		font-size: 28px;
+	}
+	.navbar {
+		padding: 10px;
+	}
+
+	.navbar a {
+		margin: 8px;
+		font-size: 12px;
+	}
+
+	.outter {
+		margin: 10px 5px;
+		border-width: 2px;
+	}
+
+	.showcase {
+		margin: 10px 5px;
+		padding: 0.75rem;
+	}
+
+	.myForm {
+		width: 100%;
+		padding: 12px;
+		margin: 15px auto;
+	}
+
+	.myForm label {
+		font-size: 13px;
+		margin-bottom: 3px;
+	}
+
+	.myForm input,
+	.myForm textarea {
+		font-size: 14px;
+		padding: 6px;
+		margin-bottom: 10px;
+	}
+
+	.myForm textarea {
+		height: 70px;
+	}
+
+	.submitBtn {
+		padding: 10px;
+		font-size: 13px;
+	}
+
+	.social {
+		margin: 8px auto;
+		padding: 6px 12px;
+		font-size: 12px;
+	}
+
+	footer p {
+		font-size: 14px;
+		margin: 15px 0;
+	}
+
+	.my-projects {
+		padding: 1rem;
+		margin: 1rem auto;
+	}
+
+	/* Comment box adjustments for extra small screens */
+	.comment-box {
+		padding: 10px;
+	}
+
+	.comment-img {
+		width: 50px;
+		height: 50px;
+	}
+
+	.comment-text {
+		font-size: 13px;
+	}
+}
