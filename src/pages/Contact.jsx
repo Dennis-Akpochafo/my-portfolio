@@ -9,6 +9,8 @@ const Contact = () => {
 	});
 
 	const [successMessage, setSuccessMessage] = useState('');
+	const [errorMessage, setErrorMessage] = useState('');
+	const [isSending, setIsSending] = useState(false);
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -20,7 +22,26 @@ const Contact = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		setFormData({ name: '', email: '', message: '' });
+
+		// Validate that all fields are filled
+		if (
+			!formData.name.trim() ||
+			!formData.email.trim() ||
+			!formData.message.trim()
+		) {
+			setErrorMessage('Please fill in all fields.');
+			setTimeout(() => {
+				setErrorMessage('');
+			}, 2000);
+			return;
+		}
+
+		setIsSending(true);
+		setSuccessMessage('Sending your message...');
+		setErrorMessage('');
+
+		// Store the current form data for the message
+		const currentFormData = { ...formData };
 
 		// EmailJS configuration
 		const serviceID = 'service_cwtaoxf';
@@ -29,16 +50,19 @@ const Contact = () => {
 		emailjs.send(serviceID, templateID, formData, publicKey).then(
 			(response) => {
 				setSuccessMessage(
-					`Thank you ${formData.name}, your message has been sent ✅`
+					`Thank you ${currentFormData.name}, your message has been sent ✅`
 				);
+				setFormData({ name: '', email: '', message: '' });
+				setIsSending(false);
 				setTimeout(() => {
 					setSuccessMessage('');
 				}, 2000);
 			},
 			(err) => {
-				setSuccessMessage(`Oops something went wrong 😒`);
+				setErrorMessage(`Oops something went wrong 😒`);
+				setIsSending(false);
 				setTimeout(() => {
-					setSuccessMessage('');
+					setErrorMessage('');
 				}, 2000);
 			}
 		);
@@ -56,8 +80,9 @@ const Contact = () => {
 					</nav>
 					<h2 className="text-3xl">Contacts me!</h2>
 					{successMessage && <p className="successMessage">{successMessage}</p>}
+					{errorMessage && <p className="errorMessage">{errorMessage}</p>}
 
-					<form onSubmit={handleSubmit} className="myForm">
+					<div className="myForm">
 						<label>Name</label>
 						<input
 							type="text"
@@ -66,6 +91,7 @@ const Contact = () => {
 							placeholder="enter name"
 							value={formData.name}
 							onChange={handleChange}
+							required
 						/>
 
 						<label>Email</label>
@@ -76,6 +102,7 @@ const Contact = () => {
 							placeholder="enter email"
 							value={formData.email}
 							onChange={handleChange}
+							required
 						/>
 
 						<label>Message</label>
@@ -87,10 +114,21 @@ const Contact = () => {
 							required
 						></textarea>
 
-						<button type="submit" id="submitBtn" className="submitBtn">
-							Send
+						<button
+							onClick={handleSubmit}
+							type="button"
+							id="submitBtn"
+							className="submitBtn"
+							disabled={
+								isSending ||
+								!formData.name.trim() ||
+								!formData.email.trim() ||
+								!formData.message.trim()
+							}
+						>
+							{isSending ? 'Sending...' : 'Send'}
 						</button>
-					</form>
+					</div>
 
 					<footer>
 						<a

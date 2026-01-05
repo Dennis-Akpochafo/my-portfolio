@@ -226,6 +226,17 @@ img {
 	background: #d4edda;
 }
 
+.errorMessage {
+	color: red;
+	text-align: center;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 10px;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	background: #f8d7da;
+}
+
 footer {
 	text-align: center;
 	padding-top: 80px;
