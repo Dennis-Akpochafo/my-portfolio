@@ -82,16 +82,15 @@ img {
 
 .outter {
 	border: 5px solid black;
-	margin: 50px auto;
+	margin: 50px 20px;
 	border-radius: 20px;
 	background: lightseagreen;
-	margin-left: 20px;
 	/* make outter a column flex container so footer anchors at bottom */
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
 	box-sizing: border-box;
-	overflow: hidden; /* prevent horizontal scroll and ensure border-radius is visible by clipping overflow */
+	max-width: calc(100vw - 40px); /* ensure it doesn't exceed viewport width */
 }
 .showcase {
 	position: relative;
@@ -318,9 +317,9 @@ footer p {
 
 	/* Outer container */
 	.outter {
-		margin-left: 10px;
-		margin-right: 10px;
+		margin: 20px 10px;
 		border-width: 3px;
+		max-width: calc(100vw - 20px);
 	}
 
 	/* Showcase adjustments */
@@ -428,6 +427,7 @@ footer p {
 	.outter {
 		margin: 10px 5px;
 		border-width: 2px;
+		max-width: calc(100vw - 10px);
 	}
 
 	.showcase {

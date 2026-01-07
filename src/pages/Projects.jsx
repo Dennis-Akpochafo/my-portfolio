@@ -38,7 +38,7 @@ const Projects = () => {
 								built with React and CSS-in-JS, featuring responsive design and
 								smooth navigation in a space of <b>TWO WEEKS</b>.
 							</li>
-							<a href="#" className="completed-projects">
+							<a href="https://dennis-akpochafo.netlify.app" className="completed-projects">
 								Check Site <i className="fas fa-arrow-right"></i>
 							</a>
 

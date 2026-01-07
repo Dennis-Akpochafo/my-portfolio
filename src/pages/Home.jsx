@@ -44,7 +44,7 @@ const Home = () => {
 							target="blank"
 							className="social"
 						>
-							<i className="fab fa-linkedin"></i>View my Linked{' '}
+							<i></i>View my Linked{' '}
 							<i className="fab fa-linkedin"></i>
 						</a>
 
@@ -53,7 +53,7 @@ const Home = () => {
 							target="blank"
 							className="social"
 						>
-							<i className="fab fa-linkedin"></i>View my Github{' '}
+							<i></i>View my Github{' '}
 							<i className="fab fa-github"></i>
 						</a>
 						<p>Dennis Edgestone &copy; 2025</p>
