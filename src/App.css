@@ -7,6 +7,10 @@ body {
 	padding: 0;
 	background-color: #f4f4f4;
 }
+
+* {
+	box-sizing: border-box;
+}
 .navbar {
 	padding: 1rem;
 	display: flex;
@@ -91,6 +95,7 @@ img {
 	min-height: 100vh;
 	box-sizing: border-box;
 	max-width: calc(100vw - 40px); /* ensure it doesn't exceed viewport width */
+	overflow-x: hidden; /* prevent horizontal scroll */
 }
 .showcase {
 	position: relative;
